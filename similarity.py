@@ -1,9 +1,9 @@
 # -------------------------------------------------------------------------
-# AUTHOR: your name
-# FILENAME: title of the source file
-# SPECIFICATION: description of the program
-# FOR: CS 5990 (Advanced Data Mining) - Assignment #1
-# TIME SPENT: how long it took you to complete the assignment
+# AUTHOR: Hyewon Kang
+# FILENAME: cleaned_documents.csv
+# SPECIFICATION: Calculate cosine similarity from the given data file
+# FOR: CS 4440 (Advanced Data Mining) - Assignment #1
+# TIME SPENT: Approximately 6+ hours (over two days)
 # -----------------------------------------------------------*/
 
 # IMPORTANT NOTE: DO NOT USE ANY ADVANCED PYTHON LIBRARY TO COMPLETE THIS CODE SUCH AS numpy or pandas.
@@ -68,9 +68,9 @@ for i in range(n):                                                              
     #if i % 100 == 0:
         #print(f"similarity row {i}/{n}")
     for j in range(i + 1, n):                                                   # check next vector
-        sim = cosine_similarity([docTermMatrix[i]], [docTermMatrix[j]])[0][0]   # Calculate the cosine similarity between the vector for doc i and doc j.
-        if sim > mostSimilar:                                                   # Check if the similarity of the current pair is the highest one found so far.
-            mostSimilar, doc1, doc2 = sim, i, j                                 # If it's a new record, update the highest score and store the indices of this pair.
+        current_similarity = cosine_similarity([docTermMatrix[i]], [docTermMatrix[j]])[0][0]   # Calculate the cosine similarity between the vector for doc i and doc j.
+        if current_similarity > mostSimilar:                                                   # Check if the similarity of the current pair is the highest one found so far.
+            mostSimilar, doc1, doc2 = current_similarity, i, j                                 # If it's a new record, update the highest score and store the indices of this pair.
 
 
 # Print the highest cosine similarity following the information below
