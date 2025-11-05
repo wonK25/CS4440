@@ -6,7 +6,7 @@
 #                It reads three different training datasets and one test dataset, encodes categorical attributes (Refund and Marital Status), 
 #                and computes the average prediction accuracy over 10 runs using the Gini index.
 # FOR: CS 4440 (Data Mining) - Assignment #3
-# TIME SPENT: how long it took you to complete the assignment
+# TIME SPENT: 7 hours
 # -----------------------------------------------------------*/
 
 #IMPORTANT NOTE: YOU ARE ALLOWED TO USE ANY PYTHON LIBRARY TO COMPLETE THIS PROGRAM
@@ -89,14 +89,14 @@ for ds in dataSets:
        clf = clf.fit(X, Y)
 
        #plotting the decision tree
-       #tree.plot_tree(clf, feature_names=['Refund', 'Single', 'Divorced', 'Married', 'Taxable Income'], class_names=['Yes','No'], filled=True, rounded=True)
-       #plt.show()
+       tree.plot_tree(clf, feature_names=['Refund', 'Single', 'Divorced', 'Married', 'Taxable Income'], class_names=['Yes','No'], filled=True, rounded=True)
+       plt.show()
 
        #read the test data and add this data to data_test NumPy
        #--> add your Python code here
        # data_test =
        df_test = pd.read_csv('cheat_test.csv', sep=',', header=0)   #reading a dataset eliminating the header (Pandas library)
-       data_test = np.array(df_test.values)[:,1:] #creating a training matrix without the id (NumPy library)
+       data_test = np.array(df_test.values)[:,1:] #creating a test matrix without the id (NumPy library)
 
        # Accuracy count
        correct = 0
