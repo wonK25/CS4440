@@ -1,7 +1,8 @@
 # -------------------------------------------------------------------------
 # AUTHOR: Hye Won Kang
 # FILENAME: roc_curve.py
-# SPECIFICATION: description of the program
+# SPECIFICATION: This program trains a Decision Tree classifier using the cheat_data.csv file, 
+#                plots the ROC curve, and calculates the AUC score to evaluate its performance.
 # FOR: CS 4440 (Data Mining) - Assignment #3
 # TIME SPENT: 2 hours
 # -----------------------------------------------------------*/
